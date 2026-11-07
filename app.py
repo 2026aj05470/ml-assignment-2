@@ -30,11 +30,11 @@ model_options = {
 
 selected_model_label = st.sidebar.selectbox("Select ML Model", list(model_options.keys()))
 
-@st.cache_resource
+@st.experimental_singleton
 def load_scaler():
     return joblib.load("model/scaler.joblib")
 
-@st.cache_resource
+@st.experimental_singleton
 def load_model(filename):
     return joblib.load(f"model/{filename}")
 
