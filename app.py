@@ -14,7 +14,8 @@ st.set_page_config(page_title="M.Tech ML Assignment 2", layout="wide")
 st.title("M.Tech ML Assignment: 12-Feature Classification")
 
 # Required for Streamlit v1.12.0 caching
-@st.experimental_singleton
+# Use modern caching decorator supported across current Streamlit releases
+@st.cache_resource
 def load_artifacts():
     scaler = joblib.load(os.path.join("model", "scaler.joblib"))
     
