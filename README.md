@@ -1,5 +1,8 @@
 # M.Tech Machine Learning Assignment 2: Binary Classification App
 
+2026aj05470 
+P. Sai Prakash Pattabhi
+
 An end-to-end Machine Learning assignment for the BITS Pilani M.Tech AIML program. This repository contains the complete pipeline for training, evaluating, and deploying five distinct classification algorithms using a 12-feature dataset via an interactive Streamlit web application.
 
 ---
