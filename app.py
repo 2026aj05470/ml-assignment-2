@@ -13,9 +13,13 @@ from sklearn.metrics import (
 st.set_page_config(page_title="M.Tech ML Assignment 2", layout="wide")
 st.title("M.Tech ML Assignment: 12-Feature Classification")
 
-# Required for Streamlit v1.12.0 caching
-# Use modern caching decorator supported across current Streamlit releases
-@st.cache_resource
+# Backward and forward compatible caching helper
+try:
+    cache_decorator = st.cache_resource
+except AttributeError:
+    cache_decorator = st.experimental_singleton
+
+@cache_decorator
 def load_artifacts():
     scaler = joblib.load(os.path.join("model", "scaler.joblib"))
     
